@@ -383,12 +383,22 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 
-  <script>
+   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
-
+      demo.initDocChart();
+      console.log("hello");
+      function addData(chart, label, data) {
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+      });
+      chart.update();
+     }
+      addData(demo.myChart, "JUL", 15);
+    
     });
-  </script>
+  </script> 
 
 {% endblock javascripts %}
