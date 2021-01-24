@@ -1,0 +1,61 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header">
+        <h4 class="card-title"> Simple Table</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table tablesorter " id="">
+            <thead class=" text-primary">
+              <tr>
+                <th>Date</th>
+                <th>Position</th>
+                <th>Result</th>
+                <th>Infectious<th>
+              </tr>
+            </thead>
+            <tbody>
+              {% comment %} <td>Student</td>
+              <td>Student</td>
+              <td>Student</td>
+              <td>Student</td> {% endcomment %}
+              {% for test in test_list %}
+                <td>{{test.date}}</td>
+                {% if test.person.student %}
+                    <td>Student</td>
+                {%else %}
+                    <td>Employee</td>
+                {% endif %}
+                {% if test.is_positive %}
+                    <td>Positive</td>
+                {%else %}
+                    <td>Negative</td>
+                {% endif %}
+                {% if test.person.is_infected %}
+                    <td>Infectious</td>
+                {%else %}
+                    <td>Not Infectious</td>
+                {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

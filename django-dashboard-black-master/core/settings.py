@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'  # Enable the inner app 
+    'app',  # Enable the inner app 
+    'tracker',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,7 @@ TEMPLATE_DIR = os.path.join(CORE_DIR, "core/templates")  # ROOT dir for template
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [TEMPLATE_DIR, "core/templates/tracker"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
