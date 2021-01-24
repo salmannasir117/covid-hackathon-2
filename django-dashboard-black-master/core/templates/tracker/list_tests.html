@@ -6,7 +6,26 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
+{%block upload%}{%endblock%}
+<div class="card">
+  <div class="card-body">
+    <form action="{% url 'tracker:list-tests' %}" method="post">
+    {% csrf_token %}
+      <div class="form-group">
+        <label for="filter">Filter your data</label>
+        <select class="form-control" name="filter" id="exampleFormControlSelect1">
+        {% comment %} <select name="filter" id="filter"> {% endcomment %}
+        <option value="user_data">Only your tests</option>
+        <option value="only_positive">Only positive tests</option>
+        <option value="last_month">last 30 days</option>
+        <option value="friend_group">Friend Group tests</option>
+        </select>
+        <input type="submit" value="Submit Changes">
+      </div>
+    </select>
+    </form>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-12">
     <div class="card ">
@@ -54,7 +73,7 @@
       </div>
     </div>
   </div>
-
+<a href="{%url 'tracker:download_template' %} " download> Download template</a><br>
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
