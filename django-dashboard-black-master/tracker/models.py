@@ -13,10 +13,10 @@ class Test(models.Model):
 
 class Day(Enum):
     MONDAY = "Monday"
-    # TUESDAY = "Tuesday", _("Tuesday")
+    TUESDAY = "Tuesday"
     WEDNESDAY = "Wednesday"
-    # THURSDAY = "Thursday", _("Thursday")
-    # FRIDAY = "Friday", _("Friday")  
+    THURSDAY = "Thursday"
+    FRIDAY = "Friday"  
 
 class CourseDateTime(models.Model):
     course = models.ForeignKey('Course', on_delete=models.CASCADE,)
