@@ -418,6 +418,7 @@ demo = {
 
 
 
+
     var chart_labels = ['ABC', 'XYZ', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     var chart_data = [0, 0, 0, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
@@ -434,7 +435,7 @@ demo = {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "My First dataset",
+          label: "Confirmed Cases",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
