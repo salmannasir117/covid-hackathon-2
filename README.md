@@ -4,6 +4,8 @@ This is the repo for the "EDUTracer" team of the 2021 EGHI/GT HACK COVID 19 Hack
 # Usage:
 ```
 conda env create -f environment.yml  
-conda activate tracker    
+conda activate covid-tracker    
 python manage.py runserver
 ```
+
+naviagate to ``localhost:8000``
