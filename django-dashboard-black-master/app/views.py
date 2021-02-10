@@ -10,12 +10,12 @@ from django.http import HttpResponse
 from django import template
 
 @login_required(login_url="/login/")
-def index(request):
+def index2(request):
     
     context = {}
-    context['segment'] = 'index'
+    context['segment'] = 'index2'
 
-    html_template = loader.get_template( 'index.html' )
+    html_template = loader.get_template( 'index2.html' )
     return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
