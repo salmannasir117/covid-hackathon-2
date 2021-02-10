@@ -358,9 +358,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: ['AUG', 'SEP', 'OCT', 'NOV', 'DEC', 'JAN'],
       datasets: [{
-        label: "Data",
+        label: "Points",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#d048b6',
@@ -374,9 +374,16 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: [15, 44, 56, 103, 80, 130],
       }]
     };
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: gradientChartOptionsConfigurationWithTooltipPurple
+
+    });
 
     
 
@@ -389,9 +396,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: ['Deg. 1', 'Deg. 2', 'Deg. 3', 'Deg. 4', 'Deg. 5'],
       datasets: [{
-        label: "My First dataset",
+        label: "Cases",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#00d6b4',
@@ -405,7 +412,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
+        data: [6, 13, 28, 59, 120],
       }]
     };
 
@@ -418,8 +425,7 @@ demo = {
 
 
 
-
-    var chart_labels = ['ABC', 'XYZ', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    var chart_labels = ['FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC', 'JAN'];
     var chart_data = [0, 0, 0, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
 
@@ -435,7 +441,7 @@ demo = {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "Confirmed Cases",
+          label: "Value",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
@@ -458,6 +464,33 @@ demo = {
     $("#0").click(function() {
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
+
+      myChartData.data.datasets[0].data[0] = 0;
+      myChartData.update();
+      myChartData.data.datasets[0].data[1] = 3;
+      myChartData.update();
+      myChartData.data.datasets[0].data[2] = 13;
+      myChartData.update();
+      myChartData.data.datasets[0].data[3] = 25;
+      myChartData.update();
+      myChartData.data.datasets[0].data[4] = 6;
+      myChartData.update();
+      myChartData.data.datasets[0].data[5] = 23;
+      myChartData.update();
+      myChartData.data.datasets[0].data[6] = 78;
+      myChartData.update();
+      myChartData.data.datasets[0].data[7] = 124;
+      myChartData.update();
+      myChartData.data.datasets[0].data[8] = 49;
+      myChartData.update();
+      myChartData.data.datasets[0].data[9] = 56;
+      myChartData.update();
+      myChartData.data.datasets[0].data[10] = 35;
+      myChartData.update();
+      myChartData.data.datasets[0].data[11] = 67;
+      myChartData.update();
+      console.log(data.datasets[0].data);
+
       data.labels = chart_labels;
       myChartData.update();
     });
@@ -465,6 +498,33 @@ demo = {
       var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
+
+      myChartData.data.datasets[0].data[0] = 1;
+      myChartData.update();
+      myChartData.data.datasets[0].data[1] = 5.3;
+      myChartData.update();
+      myChartData.data.datasets[0].data[2] = 13.7;
+      myChartData.update();
+      myChartData.data.datasets[0].data[3] = 14.7;
+      myChartData.update();
+      myChartData.data.datasets[0].data[4] = 18;
+      myChartData.update();
+      myChartData.data.datasets[0].data[5] = 35.7;
+      myChartData.update();
+      myChartData.data.datasets[0].data[6] = 75;
+      myChartData.update();
+      myChartData.data.datasets[0].data[7] = 83.7;
+      myChartData.update();
+      myChartData.data.datasets[0].data[8] = 76.3;
+      myChartData.update();
+      myChartData.data.datasets[0].data[9] = 46.7;
+      myChartData.update();
+      myChartData.data.datasets[0].data[10] = 52.7;
+      myChartData.update();
+      myChartData.data.datasets[0].data[11] = 56.3;
+      myChartData.update();
+      console.log(data.datasets[0].data);
+
       data.labels = chart_labels;
       myChartData.update();
     });
@@ -473,11 +533,33 @@ demo = {
       var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
-      myChartData.data.datasets[0].data[2] = 100;
+      myChartData.data.datasets[0].data[0] = 0;
+      myChartData.update();
+      myChartData.data.datasets[0].data[1] = 12;
+      myChartData.update();
+      myChartData.data.datasets[0].data[2] = 30;
+      myChartData.update();
+      myChartData.data.datasets[0].data[3] = 15;
+      myChartData.update();
+      myChartData.data.datasets[0].data[4] = 6;
+      myChartData.update();
+      myChartData.data.datasets[0].data[5] = 5;
+      myChartData.update();
+      myChartData.data.datasets[0].data[6] = 4;
+      myChartData.update();
+      myChartData.data.datasets[0].data[7] = 74;
+      myChartData.update();
+      myChartData.data.datasets[0].data[8] = 114;
+      myChartData.update();
+      myChartData.data.datasets[0].data[9] = 76;
+      myChartData.update();
+      myChartData.data.datasets[0].data[10] = 55;
+      myChartData.update();
+      myChartData.data.datasets[0].data[11] = 86;
       myChartData.update();
       console.log(data.datasets[0].data);
       data.labels = chart_labels;
-      myChartData.update();
+      //myChartData.update();
     });
 
 
@@ -497,9 +579,9 @@ demo = {
         display: false
       },
       data: {
-        labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+        labels: ['CS 2367', 'PHIL 3021', 'ECE 4432', 'CS 2021', 'APPH 1035', 'MATH 3045'],
         datasets: [{
-          label: "Countries",
+          label: "Cases",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -507,7 +589,7 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+          data: [51, 46, 18, 83, 102, 42],
         }]
       },
       options: gradientBarChartConfiguration
@@ -516,9 +598,10 @@ demo = {
   },
 
   initGoogleMaps: function() {
-    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+    //var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+    var myLatlng = new google.maps.LatLng(33.7756, -84.3963);
     var mapOptions = {
-      zoom: 13,
+      zoom: 17,
       center: myLatlng,
       scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
       styles: [{

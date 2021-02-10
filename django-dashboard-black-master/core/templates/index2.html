@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                            <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                            <label class="btn btn-sm btn-primary btn-simple" id="0">
                                 <input type="radio" name="options" checked>
                                 <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Confirmed Cases</span>
                                 <span class="d-block d-sm-none">
@@ -90,7 +90,7 @@
     <div class="col-lg-4">
         <div class="card card-chart">
             <div class="card-header">
-                <h5 class="card-category">The Spread of COVID-19 in your Friend Group</h5>
+                <h5 class="card-category">The Spread of COVID-19 in your Network (Degrees of Separation) </h5>
                 <h3 class="card-title"><i class="tim-icons icon-send text-success"></i>Social Spread</h3>
             </div>
             <div class="card-body">
@@ -425,10 +425,28 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 
+<!--<script>
+    $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+    });
+</script>-->
+
 <script>
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
+        demo.initDocChart();
+        console.log("hello");
+        function addData(chart, label, data) {
+            chart.data.labels.push(label);
+            chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(data);
+            });
+            chart.update();
+        }
+        addData(demo.myChart, "JUL", 15);
+
     });
 </script>
 
